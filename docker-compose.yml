@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mytens-simple-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mytens-simple-api
+    volumes: 
+      - ./:/usr/src/app
+    expose:
+      - "9001"
+    ports:
+      - "7000:9001"
+    command: node server.js
